@@ -1,0 +1,170 @@
+/* auth.css - Estilo minimalista e profissional para Login e Register */
+
+/* Estilo Geral */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f8;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 15px 0 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+input:focus {
+    border-color: #058275;
+    outline: none;
+    box-shadow: 0 0 5px rgba(5, 130, 117, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #058275;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #046a60;
+}
+
+.message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #d9534f;
+}
+
+/* Container para o título e logo */
+.title-container {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo do container */
+    align-items: center; /* Centraliza verticalmente */
+    position: relative; /* Permite o uso do posicionamento absoluto */
+}
+
+/* Estilo para o h2 e logo */
+h2 {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+.logo {
+    width: 20%; /* Tamanho da logo */
+    height: auto;
+    margin-right: 10px; /* Espaçamento entre a logo e o texto */
+    margin-top: -8px;
+    position: absolute; /* Posiciona a logo ao lado esquerdo */
+    left: 80px; /* Ajuste a posição horizontal conforme necessário */
+}
+
+
+p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
+
+p a {
+    color: #058275;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 30px 20px;
+        max-width: 90%;
+    }
+
+    .logo{
+        width: 12%;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px 15px;
+        width: 80%;
+    }
+
+    .logo{
+        width: 16%;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    input {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    button {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .message {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon" sizes="64x64">
+    <title>VidaFlex</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Adicionei o Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+    <div class="card-container">
+        <h1 class="VidaFlex" style="display: flex; align-items: center;">
+            <img class="logo" src="imgs/logo.png" alt="logo" style="margin-left: 2px;">
+            VidaFlex
+            <!-- Botão de login que só deve aparecer quando o usuário não estiver logado -->
+           <button class="login-button" id="login-button" onclick="redirecionarParaLogin()">
+           <i class="fas fa-sign-in-alt"></i> <!-- Ícone de login -->
+           <span class="tooltip-text">Fazer Login</span> <!-- Tooltip -->
+           </button>
+        </h1>      
+        <hr>  
+        
+        <!-- Container para saudação e botão de logout, exibido apenas para usuários logados -->
+     <div class="welcome-container" style="display: none;">
+        <p id="boas-vindas">Olá, Usuário!</p> <!-- Texto de boas-vindas -->
+        <button id="logout-button">
+           <i class="fas fa-sign-out-alt"></i> Sair
+        </button> <!-- Botão de logout -->
+     </div>
+
+
+        <!-- Card 1: Mobilidade Boa -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front" id="card-boo">
+                    <h2>Mobilidade Boa</h2>
+                    <button class="flip-button">Clique-me</button>
+                </div>
+                <div class="flip-card-back">
+                    <button class="close-button">X</button>
+                    <h2>Mobilidade Boa</h2>
+                    <p>Exercícios para manter a sua boa mobilidade e fortalecer seu corpo.</p>
+                    <button class="iniciar" onclick="redirecionar('mobilidade1.html')">Iniciar Exercícios</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Mobilidade Média -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front" id="card-media">
+                    <h2>Mobilidade Média</h2>
+                    <button class="flip-button">Clique-me</button>
+                </div>
+                <div class="flip-card-back">
+                    <button class="close-button">X</button>
+                    <h2>Mobilidade Média</h2>
+                    <p>Exercícios moderados para melhorar a sua flexibilidade e força.</p>
+                    <button class="iniciar" onclick="redirecionar('mobilidade2.html')">Iniciar Exercícios</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Mobilidade Crítica -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front" id="card-critica">
+                    <h2>Mobilidade Crítica</h2>
+                    <button class="flip-button">Clique-me</button>
+                </div>
+                <div class="flip-card-back">
+                    <button class="close-button">X</button>
+                    <h2>Mobilidade Crítica</h2>
+                    <p>Exercícios leves e adaptados para recuperar sua mobilidade.</p>
+                    <button class="iniciar" onclick="redirecionar('mobilidade3.html')">Iniciar Exercícios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+ // Script para buscar o nome do usuário e exibir na página
+ fetch('/usuario')
+        .then(response => {
+            if (!response.ok) {
+                // Se o usuário não estiver autenticado, não exibe a saudação e exibe o botão de login
+                document.getElementById('login-button').style.display = 'block';
+                return;
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Exibe o nome do usuário e a saudação se estiver logado
+            const boasVindas = document.getElementById('boas-vindas');
+            if (data && boasVindas) {
+                boasVindas.textContent = `👋 Olá, ${data.nome}!`;
+                document.querySelector('.welcome-container').style.display = 'flex'; // Exibe a saudação
+                document.getElementById('login-button').style.display = 'none'; // Oculta o botão de login
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao buscar o nome do usuário:', error);
+        });
+
+    // Script para o logout
+    document.getElementById('logout-button').addEventListener('click', () => {
+        fetch('/logout')
+            .then(() => window.location.href = 'login.html')
+            .catch(error => console.error('Erro ao deslogar:', error));
+    });
+
+    // Função para redirecionar para a página de login
+    function redirecionarParaLogin() {
+        window.location.href = 'login.html';
+    }
+</script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

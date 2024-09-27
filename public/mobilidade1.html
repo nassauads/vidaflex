@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon" sizes="64x64">
+    <title>Mobilidade Boa - VidaFlex</title>
+    <link rel="stylesheet" href="css/exercicios.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Adicionei o Font Awesome para ícones -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+    <div class="card-container">
+        <div class="exercise-page">
+            <header>
+                <button class="back-button" onclick="voltarParaHome()">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </button>
+                <h1>Mobilidade Boa</h1>
+            </header>
+            <div class="exercises-container">
+                <!-- Card 1: Exercício de Mobilidade Boa 1 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="exercise-card flip-cards-front">
+                            <h3 class="exercicio">Exercício 1: Alongamento de Tríceps e Ombros</h3>
+                            <img src="exercicio-imgs/Alongamento de Tríceps e Ombros.jpg" alt="GIF de Alongamento de Tríceps e Ombros" class="exercise-gif">
+                            <p>Levante o braço, segure o cotovelo e incline-se para o lado. Repita para o outro lado.</p>
+                            <div class="button-container">
+                                <button class="start-exercise" onclick="iniciarExercicio(this); adicionarComandoVozNoExercicio(this);">Iniciar</button>
+                                <select class="time-select">
+                                    <option value="16">15 segundos</option>
+                                    <option value="31" selected>30 segundos</option>
+                                    <option value="46">45 segundos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flip-cards-back">
+                            <button class="close-button" onclick="fecharCard(this)">X</button>
+                            <img src="exercicio-imgs/Alongamento de Tríceps e Ombros.jpg" alt="GIF de Alongamento de Tríceps e Ombros" class="exercise-gif" style="border-radius: 20px;">
+                            <p>Contagem Regressiva:</p>
+                            <div class="timer">00:30</div>
+                            <div class="control-buttons">
+                                <button onclick="pausarTempo()">Pausar</button>
+                                <button onclick="pararTempo()">Parar</button>
+                                <button onclick="reiniciarTempo()">Reiniciar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 1: Exercício de Mobilidade Boa 2 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="exercise-card flip-cards-front">
+                            <h3 class="exercicio">Exercício 2: Alongamento Intensivo de Pernas</h3>
+                            <img src="exercicio-imgs/Alongamento Intensivo de Pernas.jpg" alt="GIF de Alongamento Intensivo de Pernas" class="exercise-gif">
+                            <p>Exercício avançado para melhorar a flexibilidade e a mobilidade das pernas.</p>
+                            <div class="button-container">
+                                <button class="start-exercise" onclick="iniciarExercicio(this); adicionarComandoVozNoExercicio(this);">Iniciar</button>
+                                <select class="time-select">
+                                    <option value="16">15 segundos</option>
+                                    <option value="31" selected>30 segundos</option>
+                                    <option value="46">45 segundos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flip-cards-back">
+                            <button class="close-button" onclick="fecharCard(this)">X</button>
+                            <img src="exercicio-imgs/Alongamento Intensivo de Pernas.jpg" alt="GIF de Alongamento Intensivo de Pernas" class="exercise-gif" style="border-radius: 20px;">
+                            <p>Contagem Regressiva:</p>
+                            <div class="timer">00:30</div>
+                            <div class="control-buttons">
+                                <button onclick="pausarTempo()">Pausar</button>
+                                <button onclick="pararTempo()">Parar</button>
+                                <button onclick="reiniciarTempo()">Reiniciar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Exercício de Mobilidade Boa 3 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="exercise-card flip-cards-front">
+                            <h3 class="exercicio">Exercício 3: Rotação Profunda de Quadril</h3>
+                            <img src="exercicio-imgs/Rotação Profunda de Quadril.jpg" alt="GIF de Rotação Profunda de Quadril" class="exercise-gif">
+                            <p>Exercício intensivo para aumentar a mobilidade do quadril e aliviar tensões críticas.</p>
+                            <div class="button-container">
+                                <button class="start-exercise" onclick="iniciarExercicio(this); adicionarComandoVozNoExercicio(this);">Iniciar</button>
+                                <select class="time-select">
+                                    <option value="16">15 segundos</option>
+                                    <option value="31" selected>30 segundos</option>
+                                    <option value="46">45 segundos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flip-cards-back">
+                            <button class="close-button" onclick="fecharCard(this)">X</button>
+                            <img src="exercicio-imgs/Rotação Profunda de Quadril.jpg" alt="GIF de Rotação Profunda de Quadril" class="exercise-gif" style="border-radius: 20px;">
+                            <p>Contagem Regressiva:</p>
+                            <div class="timer">00:30</div>
+                            <div class="control-buttons">
+                                <button onclick="pausarTempo()">Pausar</button>
+                                <button onclick="pararTempo()">Parar</button>
+                                <button onclick="reiniciarTempo()">Reiniciar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Exercício de Mobilidade Boa 4 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="exercise-card flip-cards-front">
+                            <h3 class="exercicio">Exercício 4: Flexão Avançada de Ombros (12x)</h3>
+                            <img src="exercicio-imgs/Flexão de Ombros.jpg" alt="GIF de Flexão Avançada de Ombros" class="exercise-gif">
+                            <p>Exercício crítico para melhorar a mobilidade dos ombros com flexão profunda.</p>
+                            <div class="button-container">
+                                <button class="start-exercise" onclick="iniciarExercicio(this); adicionarComandoVozNoExercicio(this);">Iniciar</button>
+                                <select class="time-select">
+                                    <option value="16">15 segundos</option>
+                                    <option value="31" selected>30 segundos</option>
+                                    <option value="46">45 segundos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flip-cards-back">
+                            <button class="close-button" onclick="fecharCard(this)">X</button>
+                            <img src="exercicio-imgs/Flexão de Ombros.jpg" alt="GIF de Flexão Avançada de Ombros" class="exercise-gif" style="border-radius: 20px;">
+                            <p>Contagem Regressiva:</p>
+                            <div class="timer">00:30</div>
+                            <div class="control-buttons">
+                                <button onclick="pausarTempo()">Pausar</button>
+                                <button onclick="pararTempo()">Parar</button>
+                                <button onclick="reiniciarTempo()">Reiniciar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <!-- Card 4: Exercício de Mobilidade Boa 5 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="exercise-card flip-cards-front">
+                            <h3 class="exercicio">Exercício 5: Escalador</h3>
+                            <img src="exercicio-imgs/Escalador.jpg" alt="GIF de Escalador" class="exercise-gif">
+                            <p>Comece na posição de prancha, leve um joelho em direção ao peito e alterne rapidamente entre as pernas, mantendo o core firme.</p>
+                            <div class="button-container">
+                                <button class="start-exercise" onclick="iniciarExercicio(this); adicionarComandoVozNoExercicio(this);">Iniciar</button>
+                                <select class="time-select">
+                                    <option value="16">15 segundos</option>
+                                    <option value="31" selected>30 segundos</option>
+                                    <option value="46">45 segundos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flip-cards-back">
+                            <button class="close-button" onclick="fecharCard(this)">X</button>
+                            <img src="exercicio-imgs/Escalador.jpg" alt="GIF de Escalador" class="exercise-gif" style="border-radius: 20px;">
+                            <p>Contagem Regressiva:</p>
+                            <div class="timer">00:30</div>
+                            <div class="control-buttons">
+                                <button onclick="pausarTempo()">Pausar</button>
+                                <button onclick="pararTempo()">Parar</button>
+                                <button onclick="reiniciarTempo()">Reiniciar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button class="scroll-top" onclick="scrollToTop()">
+    <i class='bx bxs-up-arrow'></i>
+</button>
+
+<script src="js/mobilidade.js"></script>
+<script src="js/comandoVoz.js"></script>
+
+
+    <script>
+        function voltarParaHome() {
+            window.location.href = 'index.html';
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+            });
+        }
+
+        window.addEventListener('scroll', function () {
+            var scrollTopButton = document.querySelector('.scroll-top');
+            if (this.window.pageYOffset > 200) {
+                scrollTopButton.style.display = 'block';
+            } else {
+                scrollTopButton.style.display = 'none';
+            }
+        });
+
+          // Verifica se o usuário está logado
+    fetch('/usuario')
+        .then(response => {
+            if (!response.ok) {
+                // Se o usuário não estiver autenticado, redireciona para a página de login
+                window.location.href = 'login.html';
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Exibe a saudação se o usuário estiver logado (caso queira usar em outras páginas)
+            const boasVindas = document.getElementById('boas-vindas');
+            if (boasVindas) {
+                boasVindas.textContent = `Olá, ${data.nome}!`;
+                document.querySelector('.welcome-container').style.display = 'flex';
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao verificar a autenticação:', error);
+            // Em caso de erro, redireciona para o login para evitar acesso não autorizado
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

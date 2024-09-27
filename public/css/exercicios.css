@@ -1,0 +1,300 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* Estilo do header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #1d1149;
+}
+
+.back-button {
+    border: none;
+    background: none;
+    font-size: 1rem;
+    color: #058275;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.back-button i {
+    margin-right: 5px;
+}
+
+/* Container dos cards */
+.exercises-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 150px;
+    padding: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* Estilo dos cards */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-cards-front, .flip-cards-back {
+    position: absolute;
+    width: 100%;
+    height: 140%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 60px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.flip-cards-front {
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flip-cards-back {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: rotateY(180deg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Estilo do conteúdo do card */
+.exercise-card h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #1d1149;
+}
+
+.exercise-card p {
+    font-size: 0.9rem;
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Botões de controle - Estilo da pilha */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: -5px;
+}
+
+.start-exercise {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: #fff;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.start-exercise:hover {
+    background-color: #218838;
+}
+
+.time-select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+/* Estilo dos botões de controle - em fila */
+.control-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.control-buttons button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.control-buttons button:hover {
+    background-color: #444;
+}
+
+/* Estilo do timer */
+.timer {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    color: #2be2cf;
+}
+
+img {
+    width: 50%;
+    height: auto;
+}
+
+.scroll-top{
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: #1d1149;
+    color: #fff;
+    border: 1px solid transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    padding: 15px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-top:hover{
+    border-color: #fff;
+    background-color: #1d1149;
+    box-shadow: none;
+}
+
+.mensagem-temporaria {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 145, 20, 0.979);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    z-index: 100; /* Certifica-se de que está acima de outros elementos */
+    opacity: 0;
+    animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .exercises-container {
+        padding: 10px;
+    }
+
+    .flip-card {
+        width: 80%;
+    }
+
+    header {
+        margin-top: 20px;
+        margin-bottom: 75px;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .exercise-card p{
+        margin-top: -30px;
+    }
+
+    .exercises-container {
+        gap: 280px;
+        margin-top: 110px;
+        margin-bottom: 100px;
+    }
+
+    .flip-cards-front, .flip-cards-back {
+        width: 100%;
+        height: 240%;
+    }
+    .exercise-gif{
+        width: 80%;
+        height: auto;
+    }
+
+    .button-container{
+        margin-top: -35px;
+    }
+
+    .scroll-top{
+        font-size: 14px;
+    }
+    .mensagem-temporaria {
+        top: -10%;
+        left: 50%;
+
+    }
+}

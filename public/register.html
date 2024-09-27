@@ -1,0 +1,61 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon" sizes="64x64">
+    <title>Cadastro - VidaFlex</title>
+    <link rel="stylesheet" href="/css/auth.css"> <!-- Link para o seu CSS -->
+</head>
+<body>
+    <div class="form-container">
+        <h2>Cadastro</h2>
+        <form id="register-form">
+            <label for="nome_usuario">Nome de Usuário:</label>
+            <input type="text" id="nome_usuario" name="nome_usuario" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <button type="submit">Registrar</button>
+        </form>
+        <p id="message" class="message"></p> <!-- Área para mensagens de feedback -->
+        <p>Já possui uma conta? <a href="login.html">Faça login</a></p>
+    </div>
+
+    <script>
+        document.getElementById('register-form').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const nome_usuario = document.getElementById('nome_usuario').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const message = document.getElementById('message'); // Seleciona o elemento de mensagem
+
+            try {
+                const response = await fetch('/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nome_usuario, email, senha })
+                });
+
+                const result = await response.text();
+                message.textContent = result; // Mostra a mensagem na área de mensagens
+                message.style.color = response.ok ? 'green' : 'red'; // Ajusta a cor da mensagem
+
+                if (response.ok) {
+                    setTimeout(() => window.location.href = 'login.html', 2000); // Redireciona após sucesso
+                }
+            } catch (error) {
+                message.textContent = 'Erro ao registrar. Tente novamente.';
+                message.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>
