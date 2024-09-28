@@ -91,6 +91,7 @@ body {
     width: 25%;
     height: 25%;
     margin-left: 10px; /* Espaço entre a imagem e o texto */
+    margin-bottom: 15px;
 }
 
 .VidaFlex {
@@ -98,7 +99,7 @@ body {
     align-items: center; /* Alinha o logo e o texto verticalmente */
     position: relative; /* Necessário para posicionar o botão login */
     color: #1d1149;
-    margin-bottom: -59px; /* Remove margem inferior adicional */
+    margin-bottom: -68px; /* Remove margem inferior adicional */
 }
 
 hr {
@@ -325,6 +326,7 @@ button:hover {
     .logo {
         width: 20%; 
         height: 20%;
+        margin-bottom: 14px;
     }
 
     h2 {
@@ -354,13 +356,14 @@ button:hover {
     }
 
     .login-button {
-        top: 40%;
+        top: 38%;
         right: 15px; /* Ajusta a posição para dispositivos muito pequenos */
-        padding: 8.5px; /* Reduz ainda mais o tamanho do botão */
+        padding: 8px; /* Reduz ainda mais o tamanho do botão */
+        font-size: 14px;
     }
 
     .login-button i {
-        font-size: 12px; /* Diminui o ícone para se ajustar melhor */
+        font-size: 13px; /* Diminui o ícone para se ajustar melhor */
     }
 
     .tooltip-text {
