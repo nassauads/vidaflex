@@ -19,6 +19,14 @@ function falarInstrucao(texto) {
     sintese.speak(mensagem);
 }
 
+// Função para parar a fala
+function pararInstrucao() {
+    const sintese = window.speechSynthesis;
+    sintese.cancel(); // Cancela qualquer fala em andamento
+    falaEmAndamento = false; // Atualiza o estado da fala
+    habilitarBotoes(); // Reabilita os botões imediatamente
+}
+
 // Função para iniciar o comando de voz com um atraso
 function iniciarComandoVoz(exercicioNome, instrucoes) {
     const texto = `${exercicioNome}. ${instrucoes}`;
@@ -57,3 +65,18 @@ function habilitarBotoes() {
     const botoes = document.querySelectorAll('.start-exercise');
     botoes.forEach(botao => botao.disabled = false);
 }
+
+// Função para adicionar o evento de fechar card e parar a fala
+function adicionarEventoFecharCard() {
+    const botoesFechar = document.querySelectorAll('.close-button');
+    botoesFechar.forEach(botao => {
+        botao.addEventListener('click', () => {
+            pararInstrucao(); // Para a voz quando o card é fechado
+        });
+    });
+}
+
+// Chame essa função após a página ser carregada para ativar o evento nos botões de fechar
+window.onload = function() {
+    adicionarEventoFecharCard(); // Ativa o evento de parar fala ao fechar card
+};
