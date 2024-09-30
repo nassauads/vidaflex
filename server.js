@@ -17,7 +17,7 @@ app.use(express.static('public')); // Adiciona essa linha para servir os arquivo
 // Configuração da sessão
 app.use(
   session({
-    secret: 'atdusrbm2a420', // Troque por uma string mais segura
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }, // Altere para true em produção (HTTPS)
