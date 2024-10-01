@@ -28,7 +28,13 @@ window.addEventListener('click', (event) => {
 
 // Salva o novo nome de usuário e atualiza na página inicial e no perfil
 document.getElementById('save-name-button').addEventListener('click', () => {
-    const newName = document.getElementById('new-user-name').value;
+    const newName = document.getElementById('new-user-name').value.trim(); // Remove espaços em branco
+
+    // Verifica se o nome está em branco
+    if (newName === "") {
+        alert("O nome de usuário não pode estar em branco.");
+        return; // Interrompe o processo se o campo estiver vazio
+    }
 
     fetch('/update-username', {
         method: 'POST',
