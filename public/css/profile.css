@@ -343,14 +343,20 @@ button {
 @media (max-width: 480px) {
     .modal-content {
         padding: 20px;
-        width: 84%;
+        width: 80%;
     }
 
     .modal-content h2 {
-        font-size: 1.3em;
+        font-size: 1.2em;
+    }
+
+    .modal-input{
+        width: 85%;
+        font-size: 1em;
     }
 
     .modal-save-button {
         font-size: 1em;
+        width: 95%;
     }
 }
