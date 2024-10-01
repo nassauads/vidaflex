@@ -12,7 +12,7 @@
 
 - **Saudação Personalizada**: Exibe uma mensagem de boas-vindas personalizada para usuários logados, junto com um botão de logout para facilitar a navegação.
 
-- **Aba de Perfil do Usuário**: A aplicação agora conta com uma aba de perfil, onde o usuário pode visualizar e atualizar suas informações pessoais:
+- **Aba de Perfil do Usuário**: A aplicação conta com uma aba de perfil, onde o usuário pode visualizar e atualizar suas informações pessoais:
   - Exibição de informações: Nome de usuário e email.
   - Edição de nome: O usuário pode alterar o nome de usuário diretamente na aba de perfil, e a mudança é refletida em todas as páginas da aplicação.
   - Excluir Conta: O usuário pode excluir permanentemente sua conta. Após a exclusão, todas as informações são removidas do banco de dados, e o usuário é redirecionado para a página de login.
