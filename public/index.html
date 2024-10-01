@@ -30,7 +30,7 @@
         
         <!-- Container para saudação e botão de logout, exibido apenas para usuários logados -->
      <div class="welcome-container" style="display: none;">
-        <p id="boas-vindas">Olá, Usuário!</p> <!-- Texto de boas-vindas -->
+        <p id="boas-vindas" onclick="redirecionarParaPerfil()" style="cursor: pointer;">Olá, Usuário!</p> <!-- Texto de boas-vindas -->
         <button id="logout-button">
            <i class="fas fa-sign-out-alt"></i> Sair
         </button> <!-- Botão de logout -->
