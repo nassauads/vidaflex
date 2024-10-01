@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon" sizes="64x64">
+    <title>Perfil do Usuário - VidaFlex</title>
+    <link rel="stylesheet" href="css/profile.css"> <!-- Estilos para a página de perfil -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> <!-- Font Awesome para ícones -->
+</head>
+<body>
+    <div class="profile-container">
+        <div class="header">
+            <div class="title-container">
+                <img src="imgs/logo.png" alt="Logo do Site" class="logo"> <!-- Adiciona a logo -->
+                <h1>Seu Perfil</h1>
+            </div>
+            <button class="back-button" onclick="voltarParaPrincipal()">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </button>
+        </div>
+        
+        <div class="profile-card">
+            <img src="imgs/avatar.png" alt="Avatar do Usuário" class="avatar">
+            <div class="profile-details">
+                <p><strong>Nome de Usuário:</strong> <span id="user-name">Carlos</span></p>
+                <p><strong>Email:</strong> <span id="user-email">carlos@email.com</span></p>
+            </div>
+        </div>
+
+        <div class="profile-actions">
+            <button class="edit-button" id="edit-name-button">Editar Nome</button>
+            <button class="delete-button" id="delete-account-button">
+                <i class="fas fa-trash-alt"></i> Excluir Conta
+            </button>
+            
+        </div>
+        
+<!-- Modal para editar nome de usuário -->
+<div id="edit-name-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Editar Nome de Usuário</h2>
+        <input type="text" id="new-user-name" placeholder="Digite o novo nome" class="modal-input">
+        <button id="save-name-button" class="modal-save-button">Salvar</button>
+    </div>
+</div>
+
+    </div>
+
+    <script src="js/profile.js"></script> <!-- Script para funcionalidades -->
+</body>
+</html>

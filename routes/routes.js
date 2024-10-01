@@ -46,8 +46,10 @@ router.post('/login', (req, res) => {
       return res.status(401).send('Senha incorreta');
     }
 
+    // Armazenando nome e email na sessão
     req.session.userId = user.id;
     req.session.userName = user.nome_usuario;
+    req.session.userEmail = user.email; // Armazenando o email na sessão
 
     res.send('Login realizado com sucesso');
   });
@@ -58,13 +60,48 @@ router.get('/perfil', verificaAutenticacao, (req, res) => {
   res.send(`Bem-vindo, ${req.session.userName}`);
 });
 
-// routes.js (adicione esta rota)
+// Rota para retornar os dados completos do usuário (nome e email)
 router.get('/usuario', (req, res) => {
-  if (req.session.userName) {
-    res.json({ nome: req.session.userName });
+  if (req.session.userName && req.session.userEmail) {
+    res.json({ nome: req.session.userName, email: req.session.userEmail });
   } else {
     res.status(401).send('Usuário não autenticado');
   }
+});
+
+
+// Rota para atualizar o nome de usuário
+router.post('/update-username', (req, res) => {
+  const { newName } = req.body;
+  const userId = req.session.userId;
+
+  const sql = 'UPDATE usuarios SET nome_usuario = ? WHERE id = ?';
+  db.query(sql, [newName, userId], (err, result) => {
+    if (err) {
+      return res.status(500).json({ success: false });
+    }
+
+    // Atualizando o nome de usuário na sessão
+    req.session.userName = newName;
+
+    res.json({ success: true });
+  });
+});
+
+
+// Rota para excluir a conta
+router.delete('/delete-account', (req, res) => {
+  const userId = req.session.userId;
+
+  const sql = 'DELETE FROM usuarios WHERE id = ?';
+  db.query(sql, [userId], (err, result) => {
+    if (err) {
+      return res.status(500).send('Erro ao excluir a conta');
+    }
+    req.session.destroy(() => {
+      res.sendStatus(200); // Retorna sucesso após a conta ser excluída
+    });
+  });
 });
 
 
