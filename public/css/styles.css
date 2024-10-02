@@ -284,6 +284,9 @@ button:hover {
 }
 
 .profile-button i {
+    display: flex; /* Usando Flexbox */
+    justify-content: center; /* Centraliza o ícone horizontalmente */
+    align-items: center; /* Centraliza o ícone verticalmente */
     font-size: 16px;
 }
 
@@ -321,31 +324,40 @@ button:hover {
     .profile-button {
         right: 20px;
         top: 40px;
-        width: 45px;  /* Diminui o tamanho do botão */
-        height: 45px; /* Deixa o botão mais compacto */
-        padding: 8px; /* Reduz o padding */
+        width: 35px;  /* Diminui o tamanho do botão */
+        height: 35px; /* Deixa o botão mais compacto */
+        padding: 5px; /* Reduz o padding para deixar o ícone centralizado */
+        border-radius: 50%; /* Mantém o botão arredondado */
     }
 
     .profile-button i {
-        font-size: 14px; /* Ajusta o tamanho do ícone para se adaptar ao tamanho do botão */
+        display: flex; /* Usando Flexbox */
+        justify-content: center; /* Centraliza o ícone horizontalmente */
+        align-items: center; /* Centraliza o ícone verticalmente */
+        font-size: 15px; /* Ajusta o tamanho do ícone para se adaptar ao botão menor */
+        
     }
 
     .profile-button .tooltip-text {
-        width: 80px; /* Ajusta a largura do tooltip */
-        padding: 4px 0;
+        width: 70px; /* Ajusta a largura do tooltip */
+        padding: 3px 0;
     }
 }
+
 
 @media (max-width: 480px) {
     .profile-button {
         right: 15px;
-        top: 23px;
+        top: 25px;
         width: 35px; /* Botão menor para celulares */
         height: 35px;
         padding: 5px; /* Menor padding para manter o equilíbrio */
     }
 
     .profile-button i {
+        display: flex; /* Usando Flexbox */
+        justify-content: center; /* Centraliza o ícone horizontalmente */
+        align-items: center; /* Centraliza o ícone verticalmente */
         font-size: 15px; /* Ajusta ainda mais o ícone */
     }
 
