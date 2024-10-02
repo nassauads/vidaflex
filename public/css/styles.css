@@ -349,8 +349,8 @@ button:hover {
     .profile-button {
         right: 15px;
         top: 25px;
-        width: 35px; /* Botão menor para celulares */
-        height: 35px;
+        width: 33px; /* Botão menor para celulares */
+        height: 33px;
         padding: 5px; /* Menor padding para manter o equilíbrio */
     }
 
