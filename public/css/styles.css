@@ -424,7 +424,7 @@ button:hover {
     }
 
     #logout-button {
-        width: 90%; /* Botão ocupa toda a largura disponível */
+        width: 85%; /* Botão ocupa toda a largura disponível */
         font-size: 15px; /* Ajusta o tamanho da fonte do botão */
     }
 
