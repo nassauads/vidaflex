@@ -42,3 +42,9 @@ fetch('/perfil')
     }
 })
 .catch(() => window.location.href = 'login.html'); // Em caso de erro, redireciona
+
+// Quando a página carregar, exibe a animação da frase
+window.addEventListener('load', function() {
+    const impactPhrase = document.querySelector('.impact-phrase');
+    impactPhrase.classList.add('show'); // Adiciona a classe para iniciar a animação
+});

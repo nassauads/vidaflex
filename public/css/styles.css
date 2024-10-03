@@ -100,14 +100,9 @@ body {
     position: relative; /* Necessário para posicionar o botão login */
     color: #1d1149;
     margin-bottom: -68px; /* Remove margem inferior adicional */
-}
-
-hr {
-    border: none; /* Remove a borda padrão */
-    border-top: 3px solid #058275; /* Ajuste a cor e a espessura da linha */
-    width: 92%; /* Largura ajustável do hr */
-    margin: 0 auto; /* Ajusta o espaçamento para aproximar do título */
-    border-radius: 8px; /* Bordas arredondadas para o hr */
+    border-bottom: 4px solid #058275;
+    border-radius: 20px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.093);
 }
 
 
@@ -144,13 +139,32 @@ button:hover {
     transform: translateY(-3px);
 }
 
-/* Estilização da área de boas-vindas e botão de logout */
+/* Efeito de animação para a frase */
+.impact-phrase {
+    text-align: center;
+    font-size: 0.9em;
+    margin: 10px 0;
+    margin-top: 25px;
+    color: teal;
+    margin-bottom: -5px;
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(-20px); /* Posiciona a frase acima do h1 */
+    transition: opacity 3s ease, transform 1.5s ease; /* Aumenta o tempo da transição para 2 segundos */
+}
+
+/* Classe que dispara a animação */
+.impact-phrase.show {
+    opacity: 1; /* A frase se torna visível */
+    transform: translateY(0); /* A frase desliza para sua posição original */
+}
+
+
 .welcome-container {
     display: flex;
     justify-content: space-between; /* Espaço entre a saudação e o botão de logout */
     align-items: center;
     margin: 20px 0;
-    margin-top: -30px;
+    margin-top: -45px;
     margin-bottom: -18px;
     padding: 10px 20px;
     background-color: #f4f7f8; /* Fundo suave */
@@ -268,7 +282,7 @@ button:hover {
 /* Estilos gerais para a .profile-button */
 .profile-button {
     position: absolute;
-    right: 30px;
+    right: 37px;
     top: 43%;
     transform: translateY(-50%);
     background-color: #058275;
@@ -347,10 +361,10 @@ button:hover {
 
 @media (max-width: 480px) {
     .profile-button {
-        right: 15px;
-        top: 25px;
-        width: 33px; /* Botão menor para celulares */
-        height: 33px;
+        right: 17px;
+        top: 27px;
+        width: 30px; /* Botão menor para celulares */
+        height: 30px;
         padding: 5px; /* Menor padding para manter o equilíbrio */
     }
 
@@ -358,7 +372,7 @@ button:hover {
         display: flex; /* Usando Flexbox */
         justify-content: center; /* Centraliza o ícone horizontalmente */
         align-items: center; /* Centraliza o ícone verticalmente */
-        font-size: 15px; /* Ajusta ainda mais o ícone */
+        font-size: 14px; /* Ajusta ainda mais o ícone */
     }
 
     .profile-button .tooltip-text {
@@ -416,13 +430,9 @@ button:hover {
 
     .VidaFlex {
         font-size: 28px; 
-        margin-bottom: -52px; /* Ajuste do espaçamento entre o título e o hr */
+        margin-bottom: -45px; /* Ajuste do espaçamento entre o título e o hr */
     }
 
-    hr {
-        width: 92%; /* Ajusta a largura do hr em telas muito pequenas */
-        margin: 0 auto; /* Mantém o hr centralizado */
-    }
 
     .logo {
         width: 20%; 
@@ -434,9 +444,16 @@ button:hover {
         font-size: 1em; 
     }
 
-    p {
+    p{
         font-size: 0.8em; 
     }
+
+    
+    .impact-phrase{
+        font-size: 0.9em; 
+        margin-bottom: 12px;
+    }
+
 
     button {
         padding: 8px 16px; /* Ajusta o tamanho dos botões */
@@ -487,12 +504,7 @@ button:hover {
 
     .VidaFlex {
         font-size: 25px; 
-        margin-bottom: -50px; /* Ajuste do espaçamento entre o título e o hr */
-    }
-
-    hr {
-        width: 96%; /* Ajusta a largura do hr em telas muito pequenas */
-        margin: 0 auto; /* Mantém o hr centralizado */
+        margin-bottom: -65px; /* Ajuste do espaçamento entre o título e o hr */
     }
 
     .logo {
@@ -511,5 +523,21 @@ button:hover {
     button {
         padding: 6px 12px; /* Ajusta o tamanho dos botões para dispositivos pequenos */
         font-size: 0.8em; 
+    }
+}
+
+ /* Quando o usuário não estiver logado */
+ @media (max-width: 480px) {
+    .impact-phrase {
+        font-size: 0.8em;
+        margin-bottom: -10px;
+    }
+}
+
+/* Quando o usuário estiver logado (aplicando a classe logged-in) */
+@media (max-width: 480px) {
+    .impact-phrase.logged-in {
+        font-size: 0.8em;
+        margin-bottom: 12px;
     }
 }
