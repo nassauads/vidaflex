@@ -74,6 +74,14 @@ function adicionarEventoFecharCard() {
             pararInstrucao(); // Para a voz quando o card é fechado
         });
     });
+
+    // Adicionando evento ao botão de voltar
+    const botaoVoltar = document.querySelector('.back-button');
+    if (botaoVoltar) {
+        botaoVoltar.addEventListener('click', () => {
+            pararInstrucao(); // Para a voz quando o usuário clica no botão de voltar
+        });
+    }
 }
 
 // Chame essa função após a página ser carregada para ativar o evento nos botões de fechar
